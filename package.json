@@ -1,0 +1,28 @@
+{
+  "name": "migration-service",
+  "version": "1.0.0",
+  "repository": "git@github.com:gary-alway/migration-service.git",
+  "author": "Gary Alway <garydouglasalway@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=dev ts-node --files -r dotenv/config ./src/test",
+    "infra:up": "docker-compose up -d && ./dynamo-setup.sh",
+    "infra:down": "docker-compose down",
+    "format": "prettier --write 'src/**/*.{js,ts,json,md}'",
+    "tsc": "tsc -noEmit",
+    "lint": "eslint . --ext ts,js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.289.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.36.0",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
