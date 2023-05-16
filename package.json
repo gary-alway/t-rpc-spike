@@ -5,17 +5,12 @@
   "author": "Gary Alway <garydouglasalway@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=dev ts-node --files -r dotenv/config ./src/test",
-    "infra:up": "docker-compose up -d && ./dynamo-setup.sh",
-    "infra:down": "docker-compose down",
+    "dev": "NODE_ENV=dev ts-node --files ./src/test",
     "format": "prettier --write 'src/**/*.{js,ts,json,md}'",
     "tsc": "tsc -noEmit",
     "lint": "eslint . --ext ts,js"
   },
-  "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.289.0",
-    "dotenv": "^16.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.15.3",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
